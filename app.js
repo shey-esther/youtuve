@@ -18,16 +18,13 @@ let app = {
       return videos.map((video, index) => {
          const imageUrl = video.snippet.thumbnails.default.url;
          const url = `https://www.youtube.com/embed/${video.id.videoId}`;
-         return `<div class="row">\
-         <div class="col-xs-7" >\
+         return `<ul>\
                   <p> 
                         <iframe class="embed-responsive-item" src=${url}> </iframe>
-                  </p>
-               </div>
-               <div class="col-xs-5" >
-                        <p align="left">las canciones mas recientes estan aqui escuchalas</p>\
-                  </div>\
-               </div>`;
+                        <p>${video.snippet.title}</p>
+                        <p>${video.snippet.description}</p>
+                        </p>
+               </ul>`;
       });
    },
    youtubeSearch: function(searchTerm) {

@@ -1,3 +1,7 @@
+*{
+  margin: 0;
+  border: 0;
+}
 body {
   background: #d5d5d5; 
   font-family: arial;
@@ -240,8 +244,16 @@ body {
   .youtuve{
     display: none;
   }
-  .video{
-    margin-right: 10%;
+  }
+
+  .row{
+    /* margin-right: 10%; */
+    max-width: 100%;
+  }
+
+  .embed-responsive-item{
     width: 100%;
   }
+  .video1{
+    max-width: 90%;
   }
