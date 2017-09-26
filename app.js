@@ -18,11 +18,16 @@ let app = {
       return videos.map((video, index) => {
          const imageUrl = video.snippet.thumbnails.default.url;
          const url = `https://www.youtube.com/embed/${video.id.videoId}`;
-         return `<li>\
-                     <p> 
+         return `<div class="row">\
+         <div class="col-xs-7" >\
+                  <p> 
                         <iframe class="embed-responsive-item" src=${url}> </iframe>
-                     </p>
-               </li>`;
+                  </p>
+               </div>
+               <div class="col-xs-5" >
+                        <p align="left">las canciones mas recientes estan aqui escuchalas</p>\
+                  </div>\
+               </div>`;
       });
    },
    youtubeSearch: function(searchTerm) {
@@ -56,3 +61,11 @@ let app = {
 };
 
 $(document).ready(app.init);
+
+
+
+
+
+
+
+
