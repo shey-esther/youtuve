@@ -18,8 +18,7 @@ let app = {
       return videos.map((video, index) => {
          const imageUrl = video.snippet.thumbnails.default.url;
          const url = `https://www.youtube.com/embed/${video.id.videoId}`;
-         return `<li> 
-                   
+         return `<li>\
                      <p> 
                         <iframe class="embed-responsive-item" src=${url}> </iframe>
                      </p>

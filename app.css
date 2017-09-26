@@ -217,6 +217,7 @@ body {
     cursor: pointer;
   }
 
+/* estilos css body */
 
   body{
     background-color: black;
@@ -224,5 +225,23 @@ body {
 
   .input-group{
     width: 90%;
-    padding: 5%;
+    padding: 3%;
+  }
+
+  .youtuve{
+    text-align: right;
+    width: 50%;
+  }
+
+  @media screen and (max-width: 900px){
+  .heade{
+      width: 100%;
+  }
+  .youtuve{
+    display: none;
+  }
+  .video{
+    margin-right: 10%;
+    width: 100%;
+  }
   }
