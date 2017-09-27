@@ -19,12 +19,11 @@ let app = {
       return videos.map((video, index) => {
          const imageUrl = video.snippet.thumbnails.default.url;
          const url = `https://www.youtube.com/embed/${video.id.videoId}`;
-         return `<div class ='row'>\
-                    <div class = 'col-sm-12'>
+         return `<ul>\
                     <img src="${imageUrl}" alt="">
-                        <p class = "letra">${video.snippet.title}</p>
-                    </div>
-               </div>`;
+                    <p class = "letra">${video.snippet.title}</p>
+                   
+               </ul>`;
       });
    },
    mostrarVideo : (video) => {

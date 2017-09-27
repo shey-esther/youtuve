@@ -228,14 +228,14 @@ body {
   }
 
   .input-group{
-    width: 90%;
+    width: 100%;
     padding: 3%;
   }
 
   .youtuve{
-    text-align: right;
     width: 50%;
   }
+
 
   @media screen and (max-width: 900px){
   .heade{
@@ -247,17 +247,23 @@ body {
   }
 
   .row{
-    /* margin-right: 10%; */
     max-width: 100%;
   }
 
   .embed-responsive-item{
     width: 100%;
   }
+
   .video1{
     max-width: 90%;
   }
 
   .letra{
     font-size: 10px;
+  }
+
+  iframe{
+    height: 350px;
+    width: 80%;
+    margin-left: 4%;
   }
