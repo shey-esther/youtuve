@@ -22,7 +22,7 @@ let app = {
          return `<div class ='row'>\
                     <div class = 'col-sm-12'>
                     <img src="${imageUrl}" alt="">
-                        <p>${video.snippet.title}</p>
+                        <p class = "letra">${video.snippet.title}</p>
                     </div>
                </div>`;
       });

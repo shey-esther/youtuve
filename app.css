@@ -257,3 +257,7 @@ body {
   .video1{
     max-width: 90%;
   }
+
+  .letra{
+    font-size: 10px;
+  }
