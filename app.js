@@ -12,21 +12,32 @@ let app = {
    init: function() {
       //app.videoSearch("iPhone");
       app.youtubeSearch("iPhone X");
+      $('#buscar').click(app.buscarvideo);
    },
-   //<iframe className="embed-responsive-item" src={url}> </iframe>
+
    getVideoList: function(videos) {
       return videos.map((video, index) => {
          const imageUrl = video.snippet.thumbnails.default.url;
          const url = `https://www.youtube.com/embed/${video.id.videoId}`;
-         return `<ul>\
-                  <p> 
-                        <iframe class="embed-responsive-item" src=${url}> </iframe>
+         return `<div class ='row'>\
+                    <div class = 'col-sm-12'>
+                    <img src="${imageUrl}" alt="">
                         <p>${video.snippet.title}</p>
-                        <p>${video.snippet.description}</p>
-                        </p>
-               </ul>`;
+                    </div>
+               </div>`;
       });
    },
+   mostrarVideo : (video) => {
+      const url = `https://www.youtube.com/embed/${video.id.videoId}`;
+       $('#videomostrar').html(`<iframe className="embed-responsive-item" src='${url}'> </iframe>`)
+
+   },
+
+   buscarvideo : () => {
+      let capturar = $('#valor').val();
+      app.youtubeSearch(capturar);
+   },
+
    youtubeSearch: function(searchTerm) {
       console.log(searchTerm);
 
@@ -37,10 +48,24 @@ let app = {
             selectedVideo: data[0],
             searchTerm: searchTerm
          };
+         app.mostrarVideo(app.result.videos[0]);
          var list = app.getVideoList(app.result.videos);
          console.log("lis: ", list);
-         $("#root").append(list);
+         $("#root").html(list);
+         $('img').click(app.seclecionarimg);
       });
+   },
+
+   seclecionarimg : (event) => {
+      
+       let sours = event.target.src;
+       console.log(sours);
+       let inicio;
+      app.result.videos.map((video, i) => {
+            const imageUrl = video.snippet.thumbnails.default.url;
+            return (sours == imageUrl)?inicio = i : '';
+         });
+         app.mostrarVideo(app.result.videos[inicio]);
    },
    videoSearch: function(searchTerm) {
       jQuery.getJSON("list.json", data => {
@@ -58,11 +83,3 @@ let app = {
 };
 
 $(document).ready(app.init);
-
-
-
-
-
-
-
-

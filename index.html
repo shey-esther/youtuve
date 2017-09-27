@@ -20,15 +20,15 @@
 <body>
    <div class="row heade">
        <div class="col-md-12">
-            <div class="col-md-3" >
+            <div class="col-sm-4" >
                 <img align="right" class="youtuve" src="img/youtuve.png" alt="">            
             </div>
             <div class="col-md-9" >
             <div class="input-group">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
+                    <input id="valor" type="text" class="form-control" placeholder="Search for...">
                     <span class="input-group-btn">
-                        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                        <button id="buscar" class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                     </span>
                   </div>
             </div>
@@ -37,9 +37,7 @@
 </div>
     <div class="row video">
        <div align="center" class="col-md-8">
-                <iframe class="video1" width="560" height="315" src="https://www.youtube.com/embed/85MppyLJHz0?disablekb=1" allowfullscreen></iframe>
-            <p>Burak Yeter - Tuesday ft. Danelle Sandoval </p>
-            
+            <div id="videomostrar"></div>
         </div> 
    <div align="left"  class="col-xs-4"> 
       <ol id = "root">
